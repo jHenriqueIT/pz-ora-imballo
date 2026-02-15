@@ -1,0 +1,5 @@
+{
+  "name": "Copy of Calculadora de Produção",
+  "description": "Uma aplicação web para calcular e rastrear a produção diária em dois turnos (manhã e tarde), com totais por turno e diários.",
+  "requestFramePermissions": []
+}
