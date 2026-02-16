@@ -20,6 +20,96 @@
       button, a, input {
         transition: all 0.3s ease-in-out;
       }
+      @keyframes pulse-glow {
+        0%, 100% {
+          box-shadow: 0 0 8px rgba(74, 222, 128, 0.5); /* Green-400 glow */
+        }
+        50% {
+          box-shadow: 0 0 16px rgba(16, 185, 129, 0.8); /* Emerald-500 glow */
+        }
+      }
+      .animate-pulse-glow {
+        animation: pulse-glow 2s infinite ease-in-out;
+      }
+
+      /* Confetti Celebration Animation */
+      .confetti-container {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        pointer-events: none;
+        z-index: 10;
+      }
+
+      .confetti-piece {
+        position: absolute;
+        width: 8px;
+        height: 16px;
+        top: -20px; /* Start above the card */
+        animation-name: fall;
+        animation-timing-function: linear;
+        animation-fill-mode: forwards; /* Stop at the end state */
+      }
+
+      @keyframes fall {
+        to {
+          transform: translateY(500px) rotateZ(720deg);
+          opacity: 0;
+        }
+      }
+
+      /* Shooting Stars Animation */
+      .stars-container {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        pointer-events: none;
+        z-index: 10;
+      }
+
+      .star {
+        position: absolute;
+        width: 3px;
+        height: 3px;
+        background: white;
+        border-radius: 50%;
+        box-shadow: 0 0 6px 0 white, 0 0 10px 0 #fff;
+        animation-name: shoot;
+        animation-timing-function: linear;
+        animation-iteration-count: 1;
+        animation-fill-mode: forwards;
+        opacity: 0;
+      }
+
+      .star::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%) rotateZ(-45deg);
+        width: 200px;
+        height: 1px;
+        background: linear-gradient(90deg, #fff, transparent);
+      }
+
+      @keyframes shoot {
+        0% {
+          transform: translateX(0) translateY(0);
+          opacity: 1;
+        }
+        80% {
+          opacity: 1;
+        }
+        100% {
+          transform: translateX(300px) translateY(300px);
+          opacity: 0;
+        }
+      }
     </style>
   <script type="importmap">
 {

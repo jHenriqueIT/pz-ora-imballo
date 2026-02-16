@@ -173,10 +173,14 @@ interface DashboardProps {
     goals: {
         dmw: { morning: number; afternoon: number; sabado: number; domingo: number; };
         dlb: { morning: number; afternoon: number; sabado: number; domingo: number; };
+        appeso: { morning: number; afternoon: number; sabado: number; domingo: number; };
+        imb_appeso: { morning: number; afternoon: number; sabado: number; domingo: number; };
     };
     setDashboardGoals: React.Dispatch<React.SetStateAction<{
         dmw: { morning: number; afternoon: number; sabado: number; domingo: number; };
         dlb: { morning: number; afternoon: number; sabado: number; domingo: number; };
+        appeso: { morning: number; afternoon: number; sabado: number; domingo: number; };
+        imb_appeso: { morning: number; afternoon: number; sabado: number; domingo: number; };
     }>>;
     selectedShift: 'manha' | 'tarde' | 'sabado' | 'domingo';
     date: Date;
